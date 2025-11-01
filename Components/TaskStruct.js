@@ -1,7 +1,7 @@
 const taskStruct = task => ({
 	tag: 'div',
 	attributes: { class: 'task' },
-	cheldren: [
+	children: [
 		{ tag: 'h3', attributes: { class: 'task__title' }, content: task.title },
 		{ tag: 'p', attributes: { class: 'task__user' }, content: task.user },
 		{ tag: 'p', attributes: { class: 'task__status' }, content: task.status },
