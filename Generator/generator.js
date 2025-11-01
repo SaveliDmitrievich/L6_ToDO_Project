@@ -49,6 +49,7 @@ export function render(component, parent) {
 	setEventListener(element, listeners)
 
 	if (parent) {
+		parent.innerHTML = ''
 		parent.appendChild(element)
 	}
 
