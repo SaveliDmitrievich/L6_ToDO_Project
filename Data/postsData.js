@@ -1,0 +1,92 @@
+export const postsData = [
+	{
+		id: 1,
+		userId: 1,
+		title: 'Путь фронтендера',
+		body: 'Советы начинающим фронтенд-разработчикам.',
+	},
+	{
+		id: 2,
+		userId: 1,
+		title: 'Работа с DOM',
+		body: 'Как правильно обновлять DOM без перерендеров.',
+	},
+	{
+		id: 3,
+		userId: 2,
+		title: 'UI и UX: различия',
+		body: 'Почему хороший UX важнее внешнего вида.',
+	},
+	{
+		id: 4,
+		userId: 3,
+		title: 'Node.js и Express',
+		body: 'Создание REST API с нуля.',
+	},
+	{
+		id: 5,
+		userId: 5,
+		title: 'Как управлять проектом',
+		body: 'Методы Agile и Scrum в действии.',
+	},
+	{
+		id: 6,
+		userId: 7,
+		title: 'React hooks',
+		body: 'Зачем нужны useEffect и useMemo.',
+	},
+	{
+		id: 7,
+		userId: 8,
+		title: 'Архитектура приложений',
+		body: 'Лучшие практики модульного подхода.',
+	},
+	{
+		id: 8,
+		userId: 6,
+		title: 'Тестирование UI',
+		body: 'Как писать unit-тесты для компонентов.',
+	},
+	{
+		id: 9,
+		userId: 4,
+		title: 'CSS Grid и Flexbox',
+		body: 'Сравнение двух подходов для верстки.',
+	},
+	{
+		id: 10,
+		userId: 2,
+		title: 'Оптимизация фронтенда',
+		body: 'Снижение времени загрузки страниц.',
+	},
+	{
+		id: 11,
+		userId: 3,
+		title: 'Введение в TypeScript',
+		body: 'Преимущества статической типизации.',
+	},
+	{
+		id: 12,
+		userId: 5,
+		title: 'Git для команд',
+		body: 'Эффективная работа с ветками и pull requests.',
+	},
+	{
+		id: 13,
+		userId: 6,
+		title: 'Обработка событий',
+		body: 'События в DOM и их делегирование.',
+	},
+	{
+		id: 14,
+		userId: 7,
+		title: 'Работа с API',
+		body: 'Получение данных через fetch и axios.',
+	},
+	{
+		id: 15,
+		userId: 8,
+		title: 'Анимации в CSS',
+		body: 'Создание плавных переходов и эффектов.',
+	},
+]

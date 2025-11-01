@@ -1,0 +1,58 @@
+export const usersData = [
+	{
+		id: 1,
+		name: 'Иван Иванов',
+		email: 'ivan@example.com',
+		phone: '+7 999 111-22-33',
+		position: 'Frontend-разработчик',
+	},
+	{
+		id: 2,
+		name: 'Ольга Петрова',
+		email: 'olga@example.com',
+		phone: '+7 999 222-33-44',
+		position: 'UI/UX дизайнер',
+	},
+	{
+		id: 3,
+		name: 'Сергей Смирнов',
+		email: 'sergey@example.com',
+		phone: '+7 999 333-44-55',
+		position: 'Backend-разработчик',
+	},
+	{
+		id: 4,
+		name: 'Алексей Волков',
+		email: 'alexey@example.com',
+		phone: '+7 999 444-55-66',
+		position: 'DevOps инженер',
+	},
+	{
+		id: 5,
+		name: 'Мария Соколова',
+		email: 'maria@example.com',
+		phone: '+7 999 555-66-77',
+		position: 'Project Manager',
+	},
+	{
+		id: 6,
+		name: 'Николай Фёдоров',
+		email: 'nikolay@example.com',
+		phone: '+7 999 666-77-88',
+		position: 'QA инженер',
+	},
+	{
+		id: 7,
+		name: 'Екатерина Орлова',
+		email: 'ekaterina@example.com',
+		phone: '+7 999 777-88-99',
+		position: 'Fullstack разработчик',
+	},
+	{
+		id: 8,
+		name: 'Владимир Кузнецов',
+		email: 'vladimir@example.com',
+		phone: '+7 999 888-99-00',
+		position: 'Team Lead',
+	},
+]
