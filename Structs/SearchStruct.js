@@ -38,28 +38,36 @@ function handleSearch(event) {
 
 	let filtered = []
 
+	// 🔹 Поиск по пользователям (включая customUsers)
 	if (root === 'users' && !subpage) {
+		const customUsers = JSON.parse(localStorage.getItem('customUsers') || '[]')
+		const allUsers = [...usersData, ...customUsers]
+
 		filtered = query
-			? usersData.filter(
+			? allUsers.filter(
 					u =>
 						u.name.toLowerCase().includes(query) ||
 						u.email.toLowerCase().includes(query)
 			  )
-			: usersData
+			: allUsers
+
 		console.log('Пользователи:', filtered)
 		render(usersStruct(filtered), document.querySelector('main'))
 	}
 
+	// 🔹 Поиск по задачам пользователя
 	if (root === 'users' && subpage === 'todos') {
 		filtered = query
 			? todosData.filter(
 					t => t.userId == userId && t.title.toLowerCase().includes(query)
 			  )
 			: todosData.filter(t => t.userId == userId)
+
 		console.log('Задачи:', filtered)
 		render(todosStruct(userId, filtered), document.querySelector('main'))
 	}
 
+	// 🔹 Поиск по постам пользователя
 	if (root === 'users' && subpage === 'posts' && !subsubpage) {
 		filtered = query
 			? postsData.filter(
@@ -69,10 +77,12 @@ function handleSearch(event) {
 							p.body.toLowerCase().includes(query))
 			  )
 			: postsData.filter(p => p.userId == userId)
+
 		console.log('Посты:', filtered)
 		render(postsStruct(userId, filtered), document.querySelector('main'))
 	}
 
+	// 🔹 Поиск по комментариям конкретного поста
 	if (root === 'users' && subpage === 'posts' && subsubpage === 'comments') {
 		filtered = query
 			? commentsData.filter(
@@ -82,6 +92,7 @@ function handleSearch(event) {
 							c.body.toLowerCase().includes(query))
 			  )
 			: commentsData.filter(c => c.postId == postId)
+
 		console.log('Комментарии:', filtered)
 		render(
 			commentsStruct(userId, postId, filtered),

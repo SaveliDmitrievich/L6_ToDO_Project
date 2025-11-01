@@ -71,10 +71,9 @@ const userCard = user => {
 	}
 }
 
-const usersStruct = () => {
-	// Получаем сохранённых пользователей
+const usersStruct = (users = null) => {
 	const customUsers = JSON.parse(localStorage.getItem('customUsers') || '[]')
-	const allUsers = [...usersData, ...customUsers]
+	const allUsers = users === null ? [...usersData, ...customUsers] : users
 
 	return {
 		tag: 'main',
