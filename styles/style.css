@@ -1,0 +1,528 @@
+:root {
+    --bg-primary: #f4f6f9;
+    --bg-secondary: #ffffff;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --accent-primary: #3464C4;
+    --accent-dark: #274E9B;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --shadow-color-hover: rgba(0, 0, 0, 0.1);
+    --font-size-base: 16px;
+    --font-family-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ====== Базовая структура ====== */
+html {
+    height: 100%;
+    font-size: var(--font-size-base);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: var(--font-family-system);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-dark);
+    text-decoration: none;
+}
+
+#container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0px auto;
+    padding: 0 20px;
+}
+
+/* ====== Header ====== */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-dark) 100%);
+    color: #fff;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.header__title a {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav__link {
+    color: #fff;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav__link:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: none;
+}
+
+/* ====== Breadcrumbs ====== */
+.breadcrumbs {
+    max-width: 1400px;
+    margin: 20px 85px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
+.crumb {
+    cursor: pointer;
+    color: var(--accent-primary);
+}
+
+.crumb:hover {
+    text-decoration: none;
+    color: var(--accent-dark);
+}
+
+.crumb__separator {
+    color: var(--text-secondary);
+}
+
+/* ====== Сетки ====== */
+.users-grid,
+.tasks-grid,
+.posts-grid,
+.comments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+/* ====== Карточки (универсальные) ====== */
+.user-card,
+.task-card,
+.post-card,
+.comment-card {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+
+}
+
+.user-card {
+    max-width: 400px;
+}
+
+.user-card:hover,
+.task-card:hover,
+.post-card:hover,
+.comment-card:hover {
+    box-shadow: 0 8px 24px var(--shadow-color-hover);
+    transform: none;
+}
+
+/* ====== Пользователи ====== */
+.user-card__name {
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.user-card__position {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.user-card__email,
+.user-card__phone {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.user-card__actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* ====== Задачи ====== */
+.tasks-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.task-card__title {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.task-card__status {
+    font-weight: 600;
+    color: var(--accent-primary);
+}
+
+.task-card__description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* ====== Посты ====== */
+.post-card__title {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.post-card__body {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.post-card__user {
+    font-size: 0.95rem;
+    color: var(--accent-secondary);
+    font-style: italic;
+}
+
+/* ====== Комментарии ====== */
+.comment-card__name {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.comment-card__body {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.comment-card__post {
+    font-size: 0.85rem;
+    color: var(--accent-secondary);
+    font-style: italic;
+}
+
+/* ====== Footer ====== */
+.footer {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    margin-top: 20px;
+}
+
+/* ====== Кнопки ====== */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn--primary {
+    background-color: var(--accent-primary);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(52, 100, 196, 0.2);
+}
+
+.btn--primary:hover {
+    color: #fff;
+    background-color: var(--accent-dark);
+    box-shadow: 0 6px 10px rgba(52, 100, 196, 0.3);
+    transform: none;
+}
+
+.btn--secondary {
+    background-color: var(--text-secondary);
+    color: #fff;
+}
+
+.btn--secondary:hover {
+    color: #fff;
+    background-color: #5a6268;
+    transform: none;
+}
+
+/* ====== Заголовки страниц ====== */
+.page-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.8rem;
+    color: var(--text-primary);
+}
+
+/* ====== Страница одного поста ====== */
+.post-detail {
+    background: var(--bg-secondary);
+    padding: 1.8rem 2.2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px var(--shadow-color);
+    margin-bottom: 2.5rem;
+}
+
+.post-detail__title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.post-detail__body {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* ====== Комментарии ====== */
+.comments-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2rem;
+    position: relative;
+}
+
+.comments-section::before {
+    content: "💬 Комментарии к посту";
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+/* ====== Карточки комментариев (уточнение) ====== */
+.comment-card {
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    padding: 1.2rem 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.comment-card__author,
+.comment-card__name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--accent-primary);
+    margin-bottom: 0.4rem;
+}
+
+.comment-card__body {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* ====== Посты (улучшенные карточки) ====== */
+.post-card {
+    position: relative;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+}
+
+.post-card:hover {
+    box-shadow: 0 8px 18px var(--shadow-color-hover);
+    transform: translateY(-3px);
+}
+
+/* Верхняя часть карточки */
+.post-card__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    margin-bottom: 0.8rem;
+}
+
+.post-card__label {
+    display: inline-block;
+    background-color: var(--accent-primary);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 3px 8px;
+    align-self: flex-start;
+    letter-spacing: 0.3px;
+}
+
+.post-card__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Разделительная линия */
+.post-card__divider {
+    border: none;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 0.8rem 0 1rem 0;
+}
+
+/* Контент поста */
+.post-card__body {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0 0 1rem 0;
+    line-height: 0.5;
+}
+
+/* Нижняя подсказка */
+.post-card__footer {
+    font-size: 0.9rem;
+    color: var(--accent-primary);
+    font-style: italic;
+}
+
+/* ====== Поиск ====== */
+.search-input {
+
+    margin: 20px 0 0 80px;
+    width: 100%;
+    max-width: 400px;
+    padding: 0.75rem 1.2rem;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 6px var(--shadow-color);
+}
+
+.search-input::placeholder {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.search-input:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 4px 12px rgba(52, 100, 196, 0.15);
+}
+
+
+.header__search {
+    margin-left: 20px;
+    flex: 1;
+    max-width: 500px;
+}
+
+.search-input:focus {
+    animation: pulse 0.4s ease-in-out;
+}
+
+.users-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.btn--add-user {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn--add-user:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.btn--danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn--danger:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+.btn-task {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--accent-primary);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(52, 100, 196, 0.2);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}

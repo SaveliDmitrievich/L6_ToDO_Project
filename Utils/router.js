@@ -12,9 +12,19 @@ export function navigateTo(hash) {
 }
 
 export function getMainStructure(path) {
-	if (path[0] === 'users' && path[1] === 'posts') return postsStruct()
-	else if (path[0] === 'users' && path[1] === 'todos') return todosStruct()
-	else if (path[0] === 'users' && path[1] === 'posts' && path[2] === 'comments')
-		return commentsStruct()
-	else return usersStruct()
+	const [root, userId, subpage, postId, subsubpage] = path
+
+	if (root === 'users' && subpage === 'todos') {
+		return todosStruct(userId)
+	}
+
+	if (root === 'users' && subpage === 'posts' && !subsubpage) {
+		return postsStruct(userId)
+	}
+
+	if (root === 'users' && subpage === 'posts' && subsubpage === 'comments') {
+		return commentsStruct(userId, postId)
+	}
+
+	return usersStruct()
 }
